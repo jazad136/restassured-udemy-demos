@@ -1,8 +1,5 @@
 package com.studentapp.tests;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
+import static io.restassured.RestAssured.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,14 +9,13 @@ import org.junit.jupiter.api.Test;
  */
 public class MyFirstTest {
     private void styles() { 
-        RestAssured
-                .given()
+        given()
                 
                 .when()
                 
                 .then();
         
-        RestAssured.given()
+        given()
                 
                 .expect()
         
@@ -43,7 +39,7 @@ public class MyFirstTest {
 //                .then()
 //                .statusCode(200);
         
-        RestAssured.given()
+        given()
                 .expect()
                 .statusCode(200)
                 .when()
