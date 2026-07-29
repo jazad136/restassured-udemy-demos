@@ -63,4 +63,14 @@ public class MyFirstTest {
                 .get("http://localhost:8080/student/list");
         response.prettyPrint();
     }
+    @Test
+    void getTheSecondStudent() {
+        var response = 
+                given()
+                .pathParam("id", 2)
+                .when()
+                .get("http://localhost:8080/student/{id}");
+        response.prettyPrint();
+    }
+    
 }
