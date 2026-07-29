@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  *
  * @author JonathanSaddler
  */
-public class MyFirstTest {
+public class StudentGetRequestTests extends TestBase{
     private void styles() { 
         given()
                 
@@ -37,7 +37,7 @@ public class MyFirstTest {
         */
 //        RestAssured.given()
 //                .when()
-//                .get("http://localhost:8080/student/list")
+//                .get("/list")
 //                .then()
 //                .statusCode(200);
         
@@ -45,13 +45,13 @@ public class MyFirstTest {
                 .expect()
                 .statusCode(200)
                 .when()
-                .get("http://localhost:8080/student/list");
+                .get("/list");
     }
     
     @DisplayName("Get a CS Student from the list")
     @Test
     void getSingleCSStudent() { 
-        Map<String, Object> params = new HashMap<String, Object>();
+        Map<String, Object> params = new HashMap<>();
         params.put("programme", "Computer Science");
         params.put("limit", 1);
         
@@ -60,7 +60,7 @@ public class MyFirstTest {
 //                .queryParam("limit", 1)
                 .queryParams(params)
                 .when()
-                .get("http://localhost:8080/student/list");
+                .get("/list");
         response.prettyPrint();
     }
     @Test
@@ -69,8 +69,7 @@ public class MyFirstTest {
                 given()
                 .pathParam("id", 2)
                 .when()
-                .get("http://localhost:8080/student/{id}");
+                .get("/{id}");
         response.prettyPrint();
     }
-    
 }
