@@ -1,5 +1,6 @@
 package com.studentapp.tests;
 import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
@@ -33,5 +34,15 @@ public class MyFirstTestNG {
         response.prettyPrint();
         ValidatableResponse validatableResponse = response.then();
         validatableResponse.statusCode(200);
+    }
+    
+    @Test
+    void getSingleCSStudent() { 
+        var response = given()
+                .queryParam("programme", "Computer Science")
+                .queryParam("limit", 1)
+                .when()
+                .get("http://localhost:8080/student/list");
+        response.prettyPrint();
     }
 }
