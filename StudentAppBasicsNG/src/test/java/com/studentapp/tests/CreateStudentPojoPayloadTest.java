@@ -1,7 +1,10 @@
 package com.studentapp.tests;
 
+import com.studentapp.model.StudentPojo;
 import static io.restassured.RestAssured.*;
 import io.restassured.http.ContentType;
+import java.util.List;
+import net.datafaker.Faker;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
@@ -9,19 +12,17 @@ import org.testng.annotations.Test;
  *
  * @author JonathanSaddler
  */
-public class CreateStudentStringPayloadTest extends TestBase{
+public class CreateStudentPojoPayloadTest extends TestBase{
     @Test
     void createNewStudent() {
-        String payload = """
-          {
-          \"firstName\": \"test2\",
-          \"lastName\": \"User\",
-          \"email\": \"test5@gmail.com\",
-          \"programme\": \"Computer Science\",
-          \"courses\": [\"C++\",\"JAVA\"]
-          }"
-        """
-        ;
+        Faker fake = new Faker();
+        StudentPojo student = new StudentPojo();
+        student.setFirstName(fake.name().firstName());
+        student.setLastName(fake.name().lastName());
+        student.setEmail(fake.internet().emailAddress());
+        student.setProgramme("ComputerScience");
+        student.setCourses(List.of("C++","JAVA"));
+        
         i("RestAssured baseURI: " + baseURI);
         i("RestAssured port: " + baseURI);
         i("RestAssured basePath: " + basePath);
@@ -29,7 +30,7 @@ public class CreateStudentStringPayloadTest extends TestBase{
         .when()
         .contentType(ContentType.JSON)
         .when()
-        .body(payload)
+        .body(student)
         .post()
         .then()
         .statusCode(201);
@@ -37,6 +38,6 @@ public class CreateStudentStringPayloadTest extends TestBase{
 
     @Override
     public String retrieveTestNameSuffix(ITestResult res) {
-        return "CreateStudentStringPayloadTest";
+        return "CreateStudentPojoPayloadTest";
     }
 }
