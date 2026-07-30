@@ -10,6 +10,8 @@
             <!--<class name="com.studentapp.tests.MyFirstTestNG"/>-->
             <!--<class name="com.studentapp.tests.CreateStudentStringPayloadTest"/>--> <!-- not rerunnable -->
             <class name="com.studentapp.tests.CreateStudentPojoPayloadTest"/>
+            <class name="com.studentapp.tests.UpdateStudentPojoPayloadTest"/>
+            <class name="com.studentapp.tests.UpdateStudentEmailTest"/>
             
         </classes>
     </test>
