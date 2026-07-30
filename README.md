@@ -17,3 +17,11 @@ using JUnit RESTAssured, Allure Reports and Jayway JsonPath
 
 TestSuites added for this course 
 - Suite.xml (StudentAppBasicsNG/src/test/resources/TestSuites/)
+
+(Tests can also be found in StudentAppBasicsNG without an XML configuration - we do not configure XML within JUnit for this project)
+
+Contents of our Suite.xml
+- CreateStudentPojoPayloadTest (test creation of a student in the database created using the container image)
+- UpdateStudentPojoPayloadTest (test update of a student in the database)
+- UpdateStudentEmailTest (test update of a student's email in the database)
+
