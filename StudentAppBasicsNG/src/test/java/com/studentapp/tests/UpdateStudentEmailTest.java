@@ -12,16 +12,13 @@ import org.testng.annotations.Test;
  *
  * @author JonathanSaddler
  */
-public class UpdateStudentPojoPayloadTest extends TestBase{
+public class UpdateStudentEmailTest extends TestBase{
     @Test
     void updateStudent() {
         Faker fake = new Faker();
         StudentPojo student = new StudentPojo();
-        student.setFirstName(fake.name().firstName());
-        student.setLastName(fake.name().lastName());
+
         student.setEmail(fake.internet().emailAddress());
-        student.setProgramme("ComputerScience");
-        student.setCourses(List.of("C++","JAVA"));
 
         i("RestAssured baseURI: " + baseURI);
         i("RestAssured port: " + baseURI);
@@ -31,7 +28,7 @@ public class UpdateStudentPojoPayloadTest extends TestBase{
         .contentType(ContentType.JSON)
         .when()
         .body(student)
-        .put("/101")
+        .patch("/101")
         .then()
         .statusCode(200);
     }
