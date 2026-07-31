@@ -20,5 +20,22 @@ public class MyCalculatorTest {
         assertThat(calculate.add2Num(3.0, 5.0), equalTo(8.0));
     }
     
+    public void tc2(){
+
+        MySimpleCalculator calculator = new MySimpleCalculator();
+        assertThat(calculator.sub2Num(5.0,4.0) ,equalTo(1.0));
+    }
+    
+    public void tc3(){
+
+        MySimpleCalculator calculator = new MySimpleCalculator();
+        assertThat(calculator.mul2Num(5.0,4.0) ,equalTo(20.0));
+    }
+    
+    public void tc4(){
+
+        MySimpleCalculator calculator = new MySimpleCalculator();
+        assertThat(calculator.div2Num(20.0,4.0) ,equalTo(6.0));
+    }
     
 }
