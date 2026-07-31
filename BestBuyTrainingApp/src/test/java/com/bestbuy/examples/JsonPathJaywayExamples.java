@@ -7,6 +7,8 @@ package com.bestbuy.examples;
 import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
 import static io.restassured.RestAssured.given;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -51,5 +53,53 @@ public class JsonPathJaywayExamples {
         int totalValue = JsonPath.read(jsonResponse, "$.total");
         print(totalValue + "");
     }
-
+    
+    @DisplayName("Get all the data elements")
+    @Test
+    public void getAllDataElements() { 
+        List<HashMap<String, Object>> dataElements = JsonPath.read(jsonResponse, "$.data");
+        dataElements.stream().forEach(System.out::println);
+    }
+    
+    @DisplayName("Get firstDataElement")
+    @Test
+    public void getFirstDataElement() { 
+        Map<String,?> firstDataElement = JsonPath.read(jsonResponse, "$.data[0]");
+        print(firstDataElement.toString());
+    }
+    @DisplayName("Get lastDataElement")
+    @Test
+    public void getLastDataElement() { 
+        Map<String,?> firstDataElement = JsonPath.read(jsonResponse, "$.data[-1]");
+        print(firstDataElement.toString());
+    }
+    
+    @DisplayName("Get all ids in the data")
+    @Test
+    public void getAllIdsUnderData() { 
+        List<String> dataElements = JsonPath.read(jsonResponse, "$.data[*].id");
+        print(dataElements.toString());
+    }
+    
+    @DisplayName("Get all ids in the data")
+    @Test
+    public void getAllIds() { 
+        List<String> dataElements = JsonPath.read(jsonResponse, "$..id");
+        print(dataElements.toString());
+    }
+    
+    @DisplayName("Get the Name of the product whose price is less than 5")
+    @Test
+    public void getNameOfProductsWhosePriceIsLessThan5() { 
+        List<String> names = JsonPath.read(jsonResponse, "$.data[?(@.price<5)].name");
+        names.stream().forEach(System.out::println);
+    }
+    
+        @DisplayName("Get the Names of the products whose price is less than 5")
+    @Test
+    public void getNameOfProductsWhosePriceIsGreaterThan5() { 
+        List<String> names = JsonPath.read(jsonResponse, "$.data[?(@.price>5)].name");
+        names.stream().forEach(System.out::println);
+    }
+//    public void 
 }
