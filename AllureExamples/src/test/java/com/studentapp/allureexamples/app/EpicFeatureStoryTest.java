@@ -6,6 +6,7 @@ package com.studentapp.allureexamples.app;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.DisplayName;
 @Epic("Just an epic")
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.DisplayName;
 public class EpicFeatureStoryTest {
     
     @DisplayName("I am just a test which will always pass")
+    @Story("I am just a test which will always pass")
     public void tc1() {
         assertTrue(true);
     }

@@ -17,6 +17,7 @@ import org.junit.jupiter.api.Test;
 public class MyCalculatorTest {
     @Test
     @DisplayName("Calculate the sum of two numbers")
+    @Story("Calculate the sum of two numbers")
     @Description("""
                  This is a test method that will add 2 numbers,
                  This test focuses on the addition of 2 numbers & checks
@@ -39,6 +40,8 @@ public class MyCalculatorTest {
         assertThat(calculator.sub2Num(5.0,4.0) ,equalTo(1.0));
     }
     
+    @DisplayName("Calculate the product of 2 numbers")
+    @Story("Calculate the product of 2 numbers")
     @Link("Software_testing") // @Link did not work
     @Test
     public void tc3(){
@@ -48,6 +51,8 @@ public class MyCalculatorTest {
     }
     
     @Issue("Issue")
+    @DisplayName("Divide 2 numbers")
+    @Story("Divide 2 numbers")
     @Test
     public void tc4(){
 
