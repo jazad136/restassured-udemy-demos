@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 @Epic("All tools for calculation")
 @Feature("Calculator to perform mathematical operations")
 @DisplayName("Calculator to perform mathematical operations")
+
 public class MyCalculatorTest {
     @Test
     @DisplayName("Calculate the sum of two numbers")
@@ -60,4 +61,18 @@ public class MyCalculatorTest {
         assertThat(calculator.div2Num(20.0,4.0) ,equalTo(6.0));
     }
     
+    @DisplayName("Calculate the sum of two negative numbers")
+    @Story("Calculate the sum of two numbers")
+    @Description("""
+                 This is a test method that will add 2 negative numbers,
+                 This test focuses on the addition of 2 negative numbers & checks
+                 if the result of the calculation is valid
+                 """)
+    @Test
+    public void tc5(){
+        CalculatorSteps calculate = new CalculatorSteps();
+        calculate.add2Numbers(-3.0,-5.0);
+        calculate.add2Numbers(-3.0,-5.0);
+        assertThat(calculate.add2Numbers(-3.0, -5.0) ,equalTo(-8.0));
+    }
 }
