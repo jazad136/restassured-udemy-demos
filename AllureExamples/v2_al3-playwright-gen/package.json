@@ -1,0 +1,21 @@
+{
+  "name": "al3-playwright-gen",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "version": "allure --version"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0",
+    "allure-commandline": "^2.33.0",
+    "allure-js": "^0.0.1-security",
+    "allure-js-commons": "^3.2.1",
+    "allure-playwright": "^3.2.1",
+    "allure": "^3.22.1"
+  }
+}
