@@ -1,5 +1,14 @@
 # SADDLER
 zips/
+BestBuyTrainingApp/
+AllureExamples/.classpath
+AllureExamples/.project
+AllureExamples/.factorypath
+AllureExamples/.settings/
+StudentAppBasicsNG/.project
+StudentAppBasicsNG/.classpath
+StudentAppBasicsNG/.factorypath
+StudentAppBasicsNG/.settings/
 
 # Compiled class file
 *.class
