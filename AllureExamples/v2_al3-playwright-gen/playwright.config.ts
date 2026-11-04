@@ -1,0 +1,4 @@
+reporters: [
+    ['list']
+    ,['allure-playwright']
+]
