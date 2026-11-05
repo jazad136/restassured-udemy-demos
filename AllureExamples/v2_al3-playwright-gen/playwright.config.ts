@@ -2,7 +2,7 @@ import type { PlaywrightTestConfig } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
     reporter: [
-        ['line']
+        ['list']
         ,['allure-playwright',
             {
             resultsDir: "allure-results",
