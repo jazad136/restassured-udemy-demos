@@ -10,7 +10,13 @@
     "aversion": "allure --version",
     "ageneratec": "allure generate ./allure-results --clean",
     "agenerate": "allure generate ./allure-results",
-    "aopen": "allure open ./allure-report"
+    "aopen": "allure open ./allure-report",
+    "ahelp" : "allure -h",
+    "aclassicgenc" : "allure classic ./allure-results --clean",
+    "aclassicgen" : "allure classic ./allure-results",
+    "a2gen" : "allure allure2 ./allure-results",
+    "awesomegen" : "allure awesome ./allure-results",
+    "aclean" : "rm -rf allure-results allure-report test-results history.jsonl"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",

@@ -1,0 +1,13 @@
+acquire_to_dispose (A2D)
+
+bill_to_collect (B2C)
+
+budget_formulation_to_execution (BF2E)
+
+procure_to_pay (P2P)
+
+record_to_report (R2R)
+
+request_to_procure (R2P)
+
+reimbursable_agreements (RA)

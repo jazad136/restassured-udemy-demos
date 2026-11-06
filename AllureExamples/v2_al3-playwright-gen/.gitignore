@@ -1,6 +1,9 @@
 # SADDLER
 package-lock.json
 test-results/
+allure-history/
+allure-results/
+allure-report/
 # Logs
 logs
 *.log
