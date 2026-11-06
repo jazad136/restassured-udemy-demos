@@ -1,11 +1,14 @@
 import type { PlaywrightTestConfig } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
+    testMatch : ['e2e/**/*.spec.js'],
+    // testIgnore : '**/old/*.spec.ts',
     reporter: [
-        ['line']
+        ['list']
         ,['allure-playwright',
             {
             resultsDir: "allure-results",
+            suiteTitle: true,
             }
         ]
     ]

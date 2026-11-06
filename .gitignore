@@ -1,4 +1,7 @@
 # SADDLER
+# Ignore StudentAppBasicsNG for now
+StudentAppBasicsNG/
+
 zips/
 BestBuyTrainingApp/
 AllureExamples/.classpath
